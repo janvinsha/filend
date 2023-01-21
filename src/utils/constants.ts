@@ -1,7 +1,7 @@
-export const HEMBA_APP_NAME = "Hemba";
+export const FILEND_APP_NAME = "Filend";
 
-export const HEMBA_ENV = process.env.NEXT_PUBLIC_ENVIRONMENT;
-export const IS_MAINNET = HEMBA_ENV === "mainnet";
+export const FILEND_ENV = process.env.NEXT_PUBLIC_ENVIRONMENT;
+export const IS_MAINNET = FILEND_ENV === "mainnet";
 // polygon
 export const POLYGON_RPC_URL = IS_MAINNET
   ? "https://rpc.ankr.com/polygon"

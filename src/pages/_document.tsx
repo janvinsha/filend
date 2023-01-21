@@ -1,7 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
-class HEMBADocument extends Document {
+class FilendDocument extends Document {
   render() {
     return (
       <Html lang="en">
@@ -38,4 +38,4 @@ class HEMBADocument extends Document {
   }
 }
 
-export default HEMBADocument;
+export default FilendDocument;

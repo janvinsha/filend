@@ -18,7 +18,7 @@ import {
 import { ThemeProvider, useTheme } from "next-themes";
 import type { ReactNode } from "react";
 import React from "react";
-import { IS_MAINNET, HEMBA_APP_NAME, POLYGON_RPC_URL } from "@utils/index";
+import { IS_MAINNET, POLYGON_RPC_URL } from "@utils/index";
 
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { polygon, polygonMumbai } from "wagmi/chains";
@@ -48,7 +48,7 @@ const connectors = connectorsForWallets([
       metaMaskWallet({ chains, shimDisconnect: true }),
       rainbowWallet({ chains }),
       ledgerWallet({ chains }),
-      coinbaseWallet({ appName: HEMBA_APP_NAME, chains }),
+      coinbaseWallet({ appName: FILEND_APP_NAME, chains }),
       walletConnectWallet({ chains }),
     ],
   },

@@ -14,7 +14,7 @@ export const usePersistStore = create(
         set(() => ({ sidebarCollapsed })),
     }),
     {
-      name: "hemba.store",
+      name: "filend.store",
     }
   )
 );

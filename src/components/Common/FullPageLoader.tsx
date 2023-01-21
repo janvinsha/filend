@@ -9,7 +9,7 @@ const FullPageLoader = () => {
           src={`./images/brand/loader.png`}
           draggable={false}
           className="w-20 h-20 ml-6 mb-6"
-          alt="hemba"
+          alt="filend"
         />
       </div>
     </div>
