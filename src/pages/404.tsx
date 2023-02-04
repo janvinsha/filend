@@ -2,7 +2,6 @@ import { Button } from "@components/UIElements/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import { FILEND_APP_NAME } from "@utils/index";
 
 export default function Custom404() {
   return (
@@ -12,8 +11,8 @@ export default function Custom404() {
       </Head>
       <div className="flex flex-col items-center justify-start h-full mt-10 md:mt-20">
         <img
-          src={`./images/brand/filend.svg`}
-          alt={FILEND_APP_NAME}
+          src={`./images/brand/filend.png`}
+          alt={"Filend"}
           draggable={false}
           height={50}
           width={50}

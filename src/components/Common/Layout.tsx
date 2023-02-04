@@ -16,6 +16,7 @@ import useIsMounted from "@hooks/useIsMounted";
 import { useAccount, useDisconnect, useNetwork } from "wagmi";
 
 import FullPageLoader from "./FullPageLoader";
+import Header from "./Header";
 interface Props {
   children: ReactNode;
 }
@@ -56,19 +57,8 @@ const Layout: FC<Props> = ({ children }) => {
         })}
       >
         {/* <Sidebar /> */}
-        <div
-          className={clsx(
-            "w-full",
-            showFullScreen ? "px-0" : "",
-            sidebarCollapsed || pathname === "/watch/[id]"
-              ? "md:pl-[90px]"
-              : "md:pl-[180px]"
-          )}
-        >
-          {/* {!NO_HEADER_PATHS.includes(pathname) && (
-            <Header className={showFullScreen ? "hidden md:flex" : ""} />
-          )} */}
-
+        <div className={clsx("w-full", "px-0")}>
+          <Header />
           <div
             className={clsx(
               "2xl:py-6 py-4 ultrawide:max-w-[110rem] mx-auto md:px-3 ultrawide:px-0",

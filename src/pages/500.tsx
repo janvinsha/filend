@@ -11,7 +11,7 @@ export default function Custom500() {
       </Head>
       <div className="flex flex-col items-center justify-start h-full mt-10 md:mt-20">
         <img
-          src={`./images/brand/filend.svg`}
+          src={`./images/brand/filend.png`}
           alt="filend"
           draggable={false}
           height={50}

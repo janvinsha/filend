@@ -21,18 +21,18 @@ import React from "react";
 import { IS_MAINNET, POLYGON_RPC_URL } from "@utils/index";
 
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { polygon, polygonMumbai } from "wagmi/chains";
+import { polygon, polygonMumbai, goerli } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { publicProvider } from "wagmi/providers/public";
 
 import ErrorBoundary from "./ErrorBoundary";
 
 const { chains, provider } = configureChains(
-  [IS_MAINNET ? polygon : polygonMumbai],
+  [goerli],
   [
     jsonRpcProvider({
       rpc: () => ({
-        http: POLYGON_RPC_URL,
+        http: "https://goerli.blockpi.network/v1/rpc/public",
       }),
     }),
     publicProvider(),
@@ -48,7 +48,7 @@ const connectors = connectorsForWallets([
       metaMaskWallet({ chains, shimDisconnect: true }),
       rainbowWallet({ chains }),
       ledgerWallet({ chains }),
-      coinbaseWallet({ appName: FILEND_APP_NAME, chains }),
+      coinbaseWallet({ appName: "Filend", chains }),
       walletConnectWallet({ chains }),
     ],
   },

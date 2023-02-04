@@ -18,13 +18,13 @@ class FilendDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href={`./images/favicons/favicon-32x32.png`}
+            href={`./images/favicons/favicon.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href={`./images/favicons/favicon-16x16.png`}
+            href={`./images/favicons/favicon.png`}
           />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#000000" />
