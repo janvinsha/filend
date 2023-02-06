@@ -11,8 +11,19 @@ import UseCollateralModal from "./UseCollateralModal";
 import SbwrModal from "./SbwrModal";
 import { BigNumber } from "ethers";
 import { from } from "@apollo/client";
+type Props = {
+  show: boolean;
+  setShowSbwr: React.Dispatch<boolean>;
+  market: MarketModel;
+  supplyRate: number;
+  address: string;
+  balanceUnderlyingBN: BigNumber;
+  supplyBalance: BigNumber;
+  successfulTransaction: () => void;
+  handleSelectMarket: () => void;
+};
 
-const TableRow = ({
+const TableRow: FC<Props> = ({
   market,
   handleSelectMarket,
   supplyRate,

@@ -6,9 +6,20 @@ import { Button } from "../UIElements/Button";
 type Props = {
   show: boolean;
   setShowCM: React.Dispatch<boolean>;
+  supplyBalance: BigNumber;
+  successfulTransaction: () => void;
+  onClick: () => void;
+  name: string;
+  loading: boolean;
 };
 
-const UseCollateralModal = ({ show, setShowCM, onClick, loading, name }) => {
+const UseCollateralModal: FC<Props> = ({
+  show,
+  setShowCM,
+  onClick,
+  loading,
+  name,
+}) => {
   return (
     <Modal
       onClose={() => setShowCM(false)}

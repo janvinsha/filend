@@ -5,13 +5,14 @@ import { useContractWrite, usePrepareContractWrite } from "wagmi";
 import ftokenAbi from "@utils/data/ftoken-abi";
 import { FILTROLLER_ADDRESS } from "@utils/constants";
 import { Input } from "../UIElements/Input";
-const Supply = ({
-  balanceUnderlyingBN,
-  name,
-  market,
-  balanceUnderlying,
-  amountSupplied,
-}) => {
+import { MarketModel } from "@/utils";
+type Props = {
+  name: string;
+  market: MarketModel;
+  amountSupplied: number;
+};
+
+const Supply: FC<Props> = ({ name, market, amountSupplied }) => {
   const [enabled, setEnabled] = useState(true);
   const [amount, setAmount] = useState();
 

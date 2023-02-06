@@ -9,8 +9,15 @@ import { Input } from "../UIElements/Input";
 import usePersistStore from "@/lib/store/persist";
 import toast from "react-hot-toast";
 import { BigNumber, ethers } from "ethers";
-
-const Supply = ({
+import { MarketModel } from "@/utils";
+type Props = {
+    name: string;
+    market: MarketModel;
+    amountSupplied: number;
+    balanceUnderlyingBN:BigNumber;
+  };
+  
+const Supply:<Props> = ({
   balanceUnderlyingBN,
   name,
   market,

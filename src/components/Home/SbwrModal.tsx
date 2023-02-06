@@ -9,12 +9,20 @@ import Supply from "./Supply";
 import Withdraw from "./Withdraw";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
+import { MarketModel } from "@/utils";
+import { BigNumber } from "ethers";
 type Props = {
   show: boolean;
   setShowSbwr: React.Dispatch<boolean>;
+  market: MarketModel;
+  balanceUnderlying: number;
+  name: string;
+  balanceUnderlyingBN: BigNumber;
+  amountSupplied: BigNumber;
+  successfulTransaction: () => void;
 };
 
-const SbwrModal = ({
+const SbwrModal: FC<Props> = ({
   show,
   setShowSbwr,
   market,
@@ -108,7 +116,6 @@ const SbwrModal = ({
               name={name}
               market={market}
               amountSupplied={amountSupplied}
-             
             />
           </Tab.Panel>
           <Tab.Panel className="py-3 focus:outline-none">
