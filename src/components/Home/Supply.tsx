@@ -10,11 +10,8 @@ import usePersistStore from "@/lib/store/persist";
 import toast from "react-hot-toast";
 import { BigNumber, ethers } from "ethers";
 import { MarketModel } from "@/utils";
-type Props = {
-  
-  };
-  
-const Supply:<Props> = ({
+
+const Supply = ({
   balanceUnderlyingBN,
   name,
   market,
