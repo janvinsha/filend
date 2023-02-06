@@ -18,6 +18,10 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+
+  experiments: {
+    layers: true,
+  },
 };
 
 module.exports = nextConfig;
