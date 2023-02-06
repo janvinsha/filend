@@ -28,6 +28,11 @@ const nextConfig = {
     syncWebAssembly: true,
     topLevelAwait: true,
   },
+  images: {
+    loader: "akamai",
+    path: "",
+  },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
