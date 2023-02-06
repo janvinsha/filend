@@ -8,14 +8,14 @@ export interface CustomErrorWithData extends Error {
 
 export interface MarketModel {
   id: string;
-  borrowRate: BigNumber;
+  borrowRate: number;
   cash: BigNumber;
   collateralFactor: BigNumber;
   exchangeRate: BigNumber;
   interestRateModelAddress: string;
   name: string;
   reserves: BigNumber;
-  supplyRate: BigNumber;
+  supplyRate: number;
   symbol: string;
   totalBorrows: BigNumber;
   totalSupply: BigNumber;
@@ -35,10 +35,11 @@ export interface AccountModel {
   id: string;
   tokens: AccountFtokenModel[];
   accountLiquidated: boolean;
-  accountLiquidator: BigNumber;
-  health: BigNumber;
-  totalBorrowValue: BigNumber;
-  totalCollateralValue: BigNumber;
+  accountLiquidator: string;
+  health: number;
+  totalBorrowValue: string;
+  totalCollateralValue: string;
+  borrowLimit: string;
 }
 
 export interface AccountFtokenModel {
@@ -47,15 +48,20 @@ export interface AccountFtokenModel {
   symbol: string;
   account: AccountModel;
   transactions: AccountFtokenTransactionModel;
-  accrualBlockNumber: BigNumber;
+  accrualBlockNumber: number;
   enteredMarket: boolean;
-  fTokenBalance: BigNumber;
-  totalUnderlyingSupplied: BigNumber;
-  totalUnderlyingRedeemed: BigNumber;
-  accountBorrowIndex: BigNumber;
-  totalUnderlyingBorrowed: BigNumber;
-  totalUnderlyingRepaid: BigNumber;
-  storedBorrowBalance: BigNumber;
+  fTokenBalance: string;
+  balanceOfUnderlying: string;
+  balanceOfUnderlyingBN: BigNumber;
+  totalUnderlyingSupplied: string;
+  totalUnderlyingRedeemed: string;
+  accountBorrowIndex: string;
+  totalUnderlyingBorrowed: string;
+  totalUnderlyingRepaid: string;
+  storedBorrowBalance: string;
+  exchangeRate: BigNumber;
+  amountSupplied: BigNumber;
+  borrowLimitUSD: number;
 }
 
 export interface AccountFtokenTransactionModel {

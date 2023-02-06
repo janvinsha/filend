@@ -10,8 +10,7 @@ const DashboardShimmer = () => {
         {!address ? (
           <div className="ultrawide:h-[17vh] h-20 bg-gray-300 dark:bg-gray-700 md:h-28 rounded-xl" />
         ) : (
-          <div className="grid gap-4 md:grid-cols-4">
-            <div className="h-28 bg-gray-300 dark:bg-gray-700 md:col-span-1 rounded-xl" />
+          <div className="grid gap-4 md:grid-cols-3">
             <div className="h-28 bg-gray-300 dark:bg-gray-700 md:col-span-1 rounded-xl" />
             <div className="h-28 bg-gray-300 dark:bg-gray-700 md:col-span-1 rounded-xl" />
             <div className="h-28 bg-gray-300 dark:bg-gray-700 md:col-span-1 rounded-xl" />

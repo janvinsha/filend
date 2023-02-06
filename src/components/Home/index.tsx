@@ -8,6 +8,7 @@ import { Button } from "../UIElements/Button";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import DesktopTable from "./DesktopTable";
 import { useFilendAccount } from "@/hooks/useFilendAccount";
+import { AccountModel } from "@/utils";
 const Home: NextPage = () => {
   const { marketList, isLoading, isError } = useMarketList();
   const { address } = useAccount();
@@ -35,8 +36,7 @@ const Home: NextPage = () => {
                 <span className="font-semibold text-sky-500">
                   Supply Balance{" "}
                 </span>
-
-                <span>$0.00001</span>
+                <span>${account ? account?.totalCollateralValue : "0.00"}</span>
               </div>
             </div>
             {/* <div className=" dark:bg-theme rounded-xl bg-white md:col-span-1 p-6 ">
@@ -51,13 +51,13 @@ const Home: NextPage = () => {
                 <span className="font-semibold  text-sky-500">
                   Borrow Balance{" "}
                 </span>
-                <span>$0.00001</span>
+                <span>${account ? account?.totalBorrowValue : "0.00"}</span>
               </div>
             </div>
             <div className=" dark:bg-theme rounded-xl bg-white md:col-span-1 p-6 ">
               <div className="flex flex-col items-center">
                 <span className="font-semibold text-sky-500">Borrow Limit</span>
-                <span>$0.22</span>
+                <span>${account ? account?.borrowLimit : "0.00"}</span>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
           </div>
         )}
         {/* this is where the*/}
-        <div className=" dark:bg-theme rounded-xl bg-white md:col-span-1 p-6 ">
+        <div className=" dark:bg-theme rounded-xl bg-white p-6 ">
           <DesktopTable
             marketList={marketList}
             handleSelectMarket={handleSelectMarket}

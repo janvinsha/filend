@@ -1,17 +1,17 @@
-import { Dialog, Transition } from '@headlessui/react'
-import clsx from 'clsx'
-import type { FC } from 'react'
-import React, { Fragment } from 'react'
-import { MdOutlineClose } from 'react-icons/md'
+import { Dialog, Transition } from "@headlessui/react";
+import clsx from "clsx";
+import type { FC } from "react";
+import React, { Fragment } from "react";
+import CloseOutline from "../Common/Icons/CloseOutline";
 
 type Props = {
-  show: boolean
-  title?: React.ReactNode
-  onClose?: () => void
-  children: React.ReactNode
-  panelClassName?: string
-  autoClose?: boolean
-}
+  show: boolean;
+  title?: React.ReactNode;
+  onClose?: () => void;
+  children: React.ReactNode;
+  panelClassName?: string;
+  autoClose?: boolean;
+};
 
 const Modal: FC<Props> = ({
   show,
@@ -19,7 +19,7 @@ const Modal: FC<Props> = ({
   children,
   title,
   panelClassName,
-  autoClose = true
+  autoClose = true,
 }) => {
   return (
     <Transition appear show={show} as={Fragment}>
@@ -53,7 +53,7 @@ const Modal: FC<Props> = ({
             >
               <Dialog.Panel
                 className={clsx(
-                  'w-full p-5 py-5 overflow-x-hidden text-left align-middle transition-all transform shadow-xl bg-secondary rounded-2xl',
+                  "w-full p-5 py-5 overflow-x-hidden text-left align-middle transition-all transform shadow-xl bg-secondary rounded-2xl",
                   panelClassName
                 )}
               >
@@ -71,7 +71,7 @@ const Modal: FC<Props> = ({
                         className="p-1 bg-gray-100 rounded-md focus:outline-none dark:bg-gray-900"
                         onClick={() => onClose?.()}
                       >
-                        <MdOutlineClose />
+                        <CloseOutline />
                       </button>
                     )}
                   </div>
@@ -83,7 +83,7 @@ const Modal: FC<Props> = ({
         </div>
       </Dialog>
     </Transition>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

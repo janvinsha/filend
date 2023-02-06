@@ -18,7 +18,6 @@ import {
 import { ThemeProvider, useTheme } from "next-themes";
 import type { ReactNode } from "react";
 import React from "react";
-import { IS_MAINNET, POLYGON_RPC_URL } from "@utils/index";
 
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { polygon, polygonMumbai, goerli } from "wagmi/chains";

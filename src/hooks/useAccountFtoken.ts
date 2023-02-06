@@ -15,16 +15,16 @@ export function useAccountFtoken(
     AccountFtokenModel[] | null
   >(null);
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    async function _getAccountFtoken() {
-      try {
-        const acctData = await getAccountFtoken(address, market);
-        setAccountFtoken(acctData);
-      } catch (error) {
-        setError(true);
-      }
+  async function _getAccountFtoken() {
+    try {
+      const acctData = await getAccountFtoken(address, market);
+      console.log("THIS IS THE RETURN FROM ACCOUNT FTOKEN", acctData);
+      setAccountFtoken(acctData);
+    } catch (error) {
+      setError(true);
     }
+  }
+  useEffect(() => {
     _getAccountFtoken();
   }, []);
 

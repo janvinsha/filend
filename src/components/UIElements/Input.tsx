@@ -1,28 +1,28 @@
-import clsx from 'clsx'
-import type { InputHTMLAttributes } from 'react'
-import React, { forwardRef, useId } from 'react'
+import clsx from "clsx";
+import type { InputHTMLAttributes } from "react";
+import React, { forwardRef, useId } from "react";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string
-  type?: string
-  className?: string
-  validationError?: string
-  prefix?: string
-  suffix?: string
+  label?: string;
+  type?: string;
+  className?: string;
+  validationError?: string;
+  prefix?: string;
+  suffix?: string;
 }
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
   {
     label,
-    type = 'text',
+    type = "text",
     validationError,
-    className = '',
+    className = "",
     prefix,
     suffix,
     ...props
   },
   ref
 ) {
-  const id = useId()
+  const id = useId();
   return (
     <label className="w-full" htmlFor={id}>
       {label && (
@@ -42,13 +42,13 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
           id={id}
           className={clsx(
             {
-              'focus:ring-1 focus:ring-indigo-500': !validationError?.length,
-              '!border-red-500': validationError?.length,
-              'rounded-r-xl': prefix,
-              'rounded-xl': !prefix && !suffix,
-              'rounded-l-xl': suffix
+              "focus:ring-1 focus:sky-blue-500": !validationError?.length,
+              "!border-red-500": validationError?.length,
+              "rounded-r-xl": prefix,
+              "rounded-xl": !prefix && !suffix,
+              "rounded-l-xl": suffix,
             },
-            'bg-white text-sm px-2.5 py-2 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 outline-none disabled:opacity-60 disabled:bg-gray-500 disabled:bg-opacity-20 w-full',
+            "bg-white text-sm px-2.5 py-2 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 outline-none disabled:opacity-60 disabled:bg-gray-500 disabled:bg-opacity-20 w-full",
             className
           )}
           ref={ref}
@@ -67,5 +67,5 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         </div>
       )}
     </label>
-  )
-})
+  );
+});

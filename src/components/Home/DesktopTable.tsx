@@ -8,6 +8,7 @@ import clsx from "clsx";
 import ChevronDownOutline from "../Common/Icons/ChevronDownOutline";
 import ChevronUpOutline from "../Common/Icons/ChevronUpOutline";
 import TableRow from "./TableRow";
+import toast from "react-hot-toast";
 
 interface DesktopTablePropsType {
   marketList: MarketModel[] | null;
@@ -19,18 +20,18 @@ const DesktopTable = ({
   handleSelectMarket,
 }: DesktopTablePropsType) => {
   const [supplyRate, setSupplyRate] = useState(true);
+  const [supplyBalance, setSupplyBalance] = useState(true);
 
   const { address } = useAccount();
-
-  const getFtokenData = async (addr, market) => {
-    return await getAccountFtoken(addr, market);
+  const successfulTransaction = () => {
+    toast.success("Transaction successful");
   };
   return (
     <div className="w-full">
       {/* Head of the table */}
       <div
-        className={clsx("grid px-4 py-4 grid-cols-5", {
-          "grid-cols-4": !address,
+        className={clsx("grid px-4 py-4 grid-cols-5 w-full", {
+          "grid-cols-3": !address,
         })}
       >
         <span className="col-span-1 font-semibold">Market </span>
@@ -49,9 +50,32 @@ const DesktopTable = ({
             </>
           )}
         </span>
-        {address && <span className="col-span-1 font-semibold">Wallet</span>}
+        {address ? (
+          <span
+            className="col-span-1 font-semibold cursor-pointer flex items-center"
+            onClick={() => setSupplyBalance(!supplyBalance)}
+          >
+            {supplyBalance ? "Supply Balance" : "Borrow Balance"}
+            {supplyBalance ? (
+              <>
+                <ChevronDownOutline className="h-3 ml-1 w-3 font-semibold" />
+              </>
+            ) : (
+              <>
+                <ChevronUpOutline className="h-3 w-3 ml-1 font-semibold" />
+              </>
+            )}
+          </span>
+        ) : (
+          ""
+        )}
+
         <span className="col-span-1 font-semibold">Liquidity</span>
-        <span className="col-span-1 font-semibold">Collateral</span>
+        {address ? (
+          <span className="col-span-1 font-semibold">Collateral</span>
+        ) : (
+          ""
+        )}
       </div>
 
       {marketList!.map((market, i) => (
@@ -59,8 +83,10 @@ const DesktopTable = ({
           market={market}
           handleSelectMarket={handleSelectMarket}
           supplyRate={supplyRate}
+          supplyBalance={supplyBalance}
           address={address}
           key={i}
+          successfulTransaction={successfulTransaction}
         />
       ))}
     </div>
