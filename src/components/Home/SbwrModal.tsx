@@ -12,14 +12,7 @@ import clsx from "clsx";
 import { MarketModel } from "@/utils";
 import { BigNumber } from "ethers";
 type Props = {
-  show: boolean;
-  setShowSbwr: React.Dispatch<boolean>;
-  market: MarketModel;
-  balanceUnderlying: number;
-  name: string;
-  balanceUnderlyingBN: BigNumber;
-  amountSupplied: BigNumber;
-  successfulTransaction: () => void;
+
 };
 
 const SbwrModal: FC<Props> = ({

@@ -11,10 +11,7 @@ import toast from "react-hot-toast";
 import { BigNumber, ethers } from "ethers";
 import { MarketModel } from "@/utils";
 type Props = {
-    name: string;
-    market: MarketModel;
-    amountSupplied: number;
-    balanceUnderlyingBN:BigNumber;
+  
   };
   
 const Supply:<Props> = ({

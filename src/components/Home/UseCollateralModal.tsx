@@ -4,13 +4,7 @@ import React from "react";
 import { Button } from "../UIElements/Button";
 
 type Props = {
-  show: boolean;
-  setShowCM: React.Dispatch<boolean>;
-  supplyBalance: BigNumber;
-  successfulTransaction: () => void;
-  onClick: () => void;
-  name: string;
-  loading: boolean;
+
 };
 
 const UseCollateralModal: FC<Props> = ({

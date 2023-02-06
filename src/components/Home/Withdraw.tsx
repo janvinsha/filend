@@ -7,9 +7,7 @@ import { FILTROLLER_ADDRESS } from "@utils/constants";
 import { Input } from "../UIElements/Input";
 import { MarketModel } from "@/utils";
 type Props = {
-  name: string;
-  market: MarketModel;
-  amountSupplied: number;
+
 };
 
 const Supply: FC<Props> = ({ name, market, amountSupplied }) => {
