@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   webpack(config) {
     config.output.webassemblyModuleFilename = "static/wasm/[modulehash].wasm";
-    config.experiments = { asyncWebAssembly: true };
+    config.experiments = { asyncWebAssembly: true, layers: true };
     return config;
   },
   eslint: {
@@ -20,7 +20,13 @@ const nextConfig = {
   },
 
   experiments: {
+    asyncWebAssembly: true,
+    buildHttp: true,
     layers: true,
+    lazyCompilation: true,
+    outputModule: true,
+    syncWebAssembly: true,
+    topLevelAwait: true,
   },
 };
 
